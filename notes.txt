@@ -1,0 +1,27 @@
+
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 476114121484.dkr.ecr.us-west-2.amazonaws.com
+
+docker run -it --entrypoint /bin/bash 476114121484.dkr.ecr.us-west-2.amazonaws.com/luckystart-runner-stage-20250119022005508804:latest 
+
+which markitdown
+
+python
+
+import markitdown
+
+markitdown path-to-file.pdf -o document.md
+
+###
+
+docker run -it --entrypoint /bin/bash 476114121484.dkr.ecr.us-west-2.amazonaws.com/luckystart-runner-stage-20250119034812175806:latest 
+
+###
+
+docker run -it --entrypoint /bin/bash 476114121484.dkr.ecr.us-west-2.amazonaws.com/luckystart-runner-stage-20250119063832999257:latest 
+
+###
+
+docker run -it --entrypoint /bin/bash 476114121484.dkr.ecr.us-west-2.amazonaws.com/luckystart-runner-stage-20250119063655614993:latest
+
+
+

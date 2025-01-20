@@ -1,0 +1,24 @@
+runner:
+  name: Convert File to Markdown
+  description: Convert files to Markdown. Supports PDF, PowerPoint, Word, Excel, Images (EXIF metadata and OCR), Audio (EXIF metadata and speech transcription), HTML, Text-based formats (CSV, JSON, XML), and ZIP files (iterates over contents).
+  version: 0.0.6
+
+build:
+  memorysize: 1280
+  commands: |
+    echo "START: Building the runner"
+    apt install -y --no-install-recommends ffmpeg
+    git clone https://github.com/microsoft/markitdown.git /opt/markitdown
+    cd /opt/markitdown/ && python3 -m pip install -e .
+    ls -alF /opt/
+    ls -alF /opt/markitdown/
+    echo "END: Building the runner"
+
+webform:
+  - name: file_name
+    prompt: File to Convert to Markdown
+    type: file
+
+launch:
+  type: python
+  command: app.py ${file_name}
